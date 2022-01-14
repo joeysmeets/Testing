@@ -20,7 +20,7 @@ public class TaxTime {
 
         // A Reader stream to read from the console
         BufferedReader in =
-            new BufferedReader(new InputStreamReader(System.in));
+                new BufferedReader(new InputStreamReader(System.in));
 
         System.out.println ("Welcome to the new Berlin tax calculator.");
         System.out.print   ("How much did you earn last year? ");
@@ -32,9 +32,9 @@ public class TaxTime {
             e1.printStackTrace();
         }
 
-//	     check income
+//     check income
 
-        if (income &lt; 0) {
+        if (income < 0) {
             System.out.println ("Even in Berlin, no one has a negative income!");
             System.out.println ("Start over.");
             System.exit (-1);
@@ -48,39 +48,39 @@ public class TaxTime {
             e.printStackTrace();
         }
 
-//	     check number of family members
+//     check number of family members
 
-       if (nFamilyMembers &lt;= 0) {
-          System.out.println("Did you forget to count yourself?");
-          System.out.println ("Start over.");
-          System.exit (-1);
-          }
+        if (nFamilyMembers <= 0) {
+            System.out.println("Did you forget to count yourself?");
+            System.out.println ("Start over.");
+            System.exit (-1);
+        }
 
-//	    compute tax total
+//    compute tax total
 
-      if (income &lt; 10000)
-         taxTotal = 0.12 * income;
-      else if (income &lt; 50000)
-         taxTotal = 300.00 + 0.24 * (income - 10000);
-      else
-         taxTotal = 1500.00 + 0.36 * (income - 50000);
+        if (income < 10000)
+            taxTotal = 0.12 * income;
+        else if (income < 50000)
+            taxTotal = 300.00 + 0.24 * (income - 10000);
+        else
+            taxTotal = 1500.00 + 0.36 * (income - 50000);
 
-      for (int i = 0; i &lt;= nFamilyMembers; i++){
-           taxTotal = taxTotal - 100;
-      }
+        for (int i = 0; i <= nFamilyMembers; i++){
+            taxTotal = taxTotal - 100;
+        }
 
-//	    check negative tax
+//    check negative tax
 
-    if (taxTotal &lt; 0) // In case of negative tax
-       taxTotal=0;
+        if (taxTotal < 0) // In case of negative tax
+            taxTotal=0;
 
-    System.out.println ("=â‚¬=â‚¬=â‚¬=â‚¬=â‚¬=â‚¬=â‚¬=â‚¬=â‚¬=â‚¬=â‚¬=â‚¬=â‚¬=â‚¬=â‚¬");
-    System.out.println ("Berlin GmbH");
-    System.out.println ("Tax bill");
-    System.out.println ("Your income was " + income + " â‚¬.");
-    System.out.println ("You have " + nFamilyMembers + " family members.");
-    System.out.println ("Your total tax is " + taxTotal + " â‚¬.");
-    System.out.println ("Family member tax saving is " + nFamilyMembers*100 + "â‚¬.");
-    System.out.println ("=â‚¬=â‚¬=â‚¬=â‚¬=â‚¬=â‚¬=â‚¬=â‚¬=â‚¬=â‚¬=â‚¬=â‚¬=â‚¬=â‚¬=â‚¬");
-	    }
+        System.out.println ("=Ã¢â€šÂ¬=Ã¢â€šÂ¬=Ã¢â€šÂ¬=Ã¢â€šÂ¬=Ã¢â€šÂ¬=Ã¢â€šÂ¬=Ã¢â€šÂ¬=Ã¢â€šÂ¬=Ã¢â€šÂ¬=Ã¢â€šÂ¬=Ã¢â€šÂ¬=Ã¢â€šÂ¬=Ã¢â€šÂ¬=Ã¢â€šÂ¬=Ã¢â€šÂ¬");
+        System.out.println ("Berlin GmbH");
+        System.out.println ("Tax bill");
+        System.out.println ("Your income was " + income + " Ã¢â€šÂ¬.");
+        System.out.println ("You have " + nFamilyMembers + " family members.");
+        System.out.println ("Your total tax is " + taxTotal + " Ã¢â€šÂ¬.");
+        System.out.println ("Family member tax saving is " + nFamilyMembers*100 + "Ã¢â€šÂ¬.");
+        System.out.println ("=Ã¢â€šÂ¬=Ã¢â€šÂ¬=Ã¢â€šÂ¬=Ã¢â€šÂ¬=Ã¢â€šÂ¬=Ã¢â€šÂ¬=Ã¢â€šÂ¬=Ã¢â€šÂ¬=Ã¢â€šÂ¬=Ã¢â€šÂ¬=Ã¢â€šÂ¬=Ã¢â€šÂ¬=Ã¢â€šÂ¬=Ã¢â€šÂ¬=Ã¢â€šÂ¬");
+    }
 }
